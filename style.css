@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #151f36;
+  font-family: sans-serif;
+}
+
+form {
+  background-color: #0b101d;
+  width: 300px;
+  padding: 2rem;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+form h1 {
+  color: #fff;
+  font-weight: 300;
+  margin: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+form div {
+  position: relative;
+  margin: 1rem;
+}
+
+form div label {
+  position: absolute;
+  top: 1.6rem;
+  left: 0.7rem;
+  margin-left: 1rem;
+  pointer-events: none;
+  color: #888;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+
+input[type="text"], input[type="password"] {
+  outline: none;
+  margin: 1rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #889bc7;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: all 0.5s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  border-bottom: 2px solid #fff;
+}
+
+input[type="text"]:focus + label, 
+input[type="password"]:focus + label,
+input[type="text"]:valid + label, 
+input[type="password"]:valid + label {
+  transform: translate(-7px, -25px) scale(0.9);
+  color: #889bc7;
+}
+
+input[type="submit"] {
+  display: block;
+  padding: 0.5rem 3rem;
+  margin: 2rem auto;
+  outline: none;
+  border: 1px solid #889bc7;
+  border-radius: 24px;
+  background: none;
+  color: #889bc7;
+  font-size: 1.1rem;
+  transition: all 0.5s;
+  text-transform: uppercase;
+}
+
+input[type="submit"]:hover {
+  background-color: #889bc7;
+  color: #000;
+  cursor: pointer;
+}
