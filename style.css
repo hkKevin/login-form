@@ -1,86 +1,240 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  background-color: #151f36;
-  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #101729;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.wave {
+  position: fixed;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 7rem;
+  padding: 0 2rem;
+}
+
+.image {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.image img {
+  width: 500px;
+}
+
+.avatar {
+  width: 80px;
+  display: block;
+  margin: 0 auto;
+}
+
+.login-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 form {
-  background-color: #0b101d;
-  width: 300px;
+  width: 400px;
   padding: 2rem;
-  border-radius: 4px;
   position: absolute;
-  top: 50%;
+  /* top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-
+  transform: translate(-50%, -50%); */
 }
 
-form h1 {
-  color: #fff;
+form h2 {
+  color: #889bc7;
   font-weight: 300;
-  margin: 1rem;
-  margin-bottom: 3rem;
+  margin: 0.5rem;
+  margin: 3rem 0;
   text-align: center;
 }
 
-form div {
+.input-div {
   position: relative;
-  margin: 1rem;
+  margin: 2rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #283b67;
+  display: grid;
+  grid-template-columns: 10% 90%;
 }
 
-form div label {
+.input-div:last-of-type {
+  margin: 4rem auto 1rem auto;
+}
+
+/* The underline animation on focus */
+.input-div::before, .input-div::after {
+  content: "";
   position: absolute;
-  top: 1.6rem;
-  left: 0.7rem;
-  margin-left: 1rem;
+  background-color: #889bc7;
+  /* width: 50%; */
+  width: 0;
+  bottom: -1px;
+  height: 2px;
+  transition: all 0.3s;
+}
+
+.input-div::before {
+  left: 50%;
+}
+
+.input-div::after {
+  right: 50%;
+}
+
+.input-div.focus::before,
+.input-div.focus::after {
+  width: 50%;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon i {
+  color: #777;
+  transition: all 0.3s;
+}
+
+.input-div.focus i {
+  color: #889bc7;
+}
+
+label {
+  position: absolute;
+  top: 20px;
+  left: 40px;
   pointer-events: none;
-  color: #888;
+  color: #777;
   font-weight: bold;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 input[type="text"], input[type="password"] {
   outline: none;
-  margin: 1rem;
   padding: 0.5rem;
   background: none;
   border: none;
-  border-bottom: 2px solid #889bc7;
-  color: #fff;
-  font-size: 1.1rem;
-  transition: all 0.5s;
-}
-
-input[type="text"]:focus, input[type="password"]:focus {
-  border-bottom: 2px solid #fff;
+  color: #889bc7;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 100%;
+  letter-spacing: 1px;
+  transition: all 0.3s;
 }
 
 input[type="text"]:focus + label, 
 input[type="password"]:focus + label,
 input[type="text"]:valid + label, 
 input[type="password"]:valid + label {
-  transform: translate(-7px, -25px) scale(0.9);
+  transform: translate(-35px, -35px) scale(0.9);
+}
+
+form a {
+  outline: none;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+  color: #777;
+  font-size: 0.8rem;
+  transition: all 0.3s;
+}
+
+form a:hover,
+form a:focus {
   color: #889bc7;
 }
 
 input[type="submit"] {
   display: block;
-  padding: 0.5rem 3rem;
-  margin: 2rem auto;
+  width: 100%;
+  padding: 0.7rem 3rem;
+  margin: 3rem auto;
   outline: none;
-  border: 2px solid #889bc7;
+  border: none;
   border-radius: 24px;
-  background: none;
-  color: #889bc7;
+  background-image: linear-gradient(45deg, #657eb7 0%, #889bc7 51%, #657eb7 100%);
+  background-size: 250%;
+  color: #101729;
   font-size: 1.1rem;
-  transition: all 0.5s;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s;
 }
 
-input[type="submit"]:hover {
-  background-color: #889bc7;
-  color: #000;
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-position: right center;
   cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1100px) {
+  .container {
+    grid-gap: 5rem;
+  }
+  .image img {
+    width: 400px
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    grid-gap: 2rem;
+  }
+  .image img {
+    width: 300px
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .wave {
+    display: none;
+  }
+  .image {
+    display: none;
+  }
+  .login-container {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  form {
+    width: 300px;
+    padding: 1rem;
+  }
 }
