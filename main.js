@@ -18,3 +18,8 @@ inputs.forEach(input => {
   input.addEventListener('focus', focusFunc);
   input.addEventListener('blur', blurFunc);
 });
+
+function loginSubmit(event) {
+  event.preventDefault();
+  location.reload();
+}
