@@ -19,7 +19,24 @@ inputs.forEach(input => {
   input.addEventListener('blur', blurFunc);
 });
 
+
 function loginSubmit(event) {
   event.preventDefault();
   location.reload();
+}
+
+
+function pwToggle() {
+  let toggle = document.getElementById('passwordToggle');
+  let pw = document.getElementById('pw');
+  if ( toggle.innerHTML == 'visibility' && pw.type == 'password' ) {
+    // if password is hidden, show it
+    pw.type = 'text';
+    toggle.innerHTML = 'visibility_off';
+  } else if ( toggle.innerHTML == 'visibility_off' && pw.type == 'text' ) {
+    // if password is shown, hide it
+    pw.type = 'password';
+    toggle.innerHTML = 'visibility';
+  }
+  
 }

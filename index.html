@@ -6,7 +6,7 @@
 	<title>Login form</title>
 	<link rel="stylesheet" href="style.css" />
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/50c1e3d273.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<img class="wave" src="./images/wave.svg" alt="wave" />
@@ -15,13 +15,12 @@
 			<img src="./images/email-campaign.svg" alt="email-campaign" />
 		</div>
 		<div class="login-container">
-			<!-- <form action="https://hkkevin.github.io/login-form/" method="POST"> -->
 			<form onsubmit="loginSubmit(event)" method="POST">
 				<img class="avatar" src="./images/avatar.svg" alt="avator" />
 				<h2>Welcome!</h2>		
 				<div class="input-div">
 					<div class="icon">
-						<i class="fas fa-user"></i>
+						<i class="material-icons">perm_identity</i>
 					</div>
 					<div>
 						<input type="text" name="username" autocomplete="off" required autofocus />
@@ -30,11 +29,14 @@
 				</div>
 				<div class="input-div">
 					<div class="icon">
-						<i class="fas fa-lock"></i>
+						<i class="material-icons">lock</i>
 					</div>
 					<div>
-						<input type="password" name="password" autocomplete="off" required />
+						<input id="pw" type="password" name="password" autocomplete="off" required />
 						<label>Password</label>
+					</div>
+					<div class="icon">
+						<i id="passwordToggle" class="material-icons" onclick="pwToggle()">visibility</i>
 					</div>
 				</div>
 				<a href="">Forget Password?</a>
