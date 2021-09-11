@@ -1,7 +1,9 @@
 # login-form
+
+### Introduction
 An exercise for styling a login form with animations and images.
 
-[LIVE DEMO](https://hkkevin.github.io/login-form/)
+Live Demo: [https://hkkevin.github.io/login-form](https://hkkevin.github.io/login-form/)
 
 ![Screenshot of login-form](https://raw.githubusercontent.com/hkKevin/login-form/master/images/screenshot.png "Screenshot of login-form")
 
